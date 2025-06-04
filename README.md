@@ -8,7 +8,7 @@ The wrapper simplifies the process of sending prompts to a local AI model and re
 
 ## Core Components
 
-*   **`prompt(prompt, token, api_server, model=None, defaultPrompt="")`**:  This function sends a prompt to the AI server and returns the response.
+*   **`prompt(prompt, token, api_server, model (optional), defaultPrompt(optional) )`**:  This function sends a prompt to the AI server and returns the response.
     *   `prompt`: The user's input prompt.
     *   `token`: Your API token (obtained from the Open Web UI settings).
     *   `api_server`: The URL of the AI server.
@@ -20,13 +20,10 @@ The wrapper simplifies the process of sending prompts to a local AI model and re
 
 ## Usage Example
 import luminary
-import requests  # Although not directly used in the example, the prompt function requires this.
 
 # Replace with your actual token and API server address
 token = "sk-09d6492196554b29b94940674f90ab73"
-api_server = "http://192.168.50.39:8080/api/chat/completions"
-
-user_input = input()
+api_server = "http://192.168.50.39:8080/api/chat/completions" **Might not be port 8080**
 
 # Send the prompt to the AI server using the default model
 response = luminary.prompt(user_input, token, api_server, "gemma3:1b", "THIS IS ADDED AUTOATICALLY: USER PROMPT:")
